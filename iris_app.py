@@ -6,7 +6,7 @@ from scipy.spatial.distance import euclidean
 
 # --- Konfigurasi Awal dan Session State ---
 st.set_page_config(
-    page_title="SPK CBR - Proyek Dosen",
+    page_title="SPK Klasifikasi Bunga Iris", # Judul Halaman Diubah
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -24,7 +24,7 @@ if 'df_case_base' not in st.session_state:
 # Perhatikan: Kami tidak menggunakan ini untuk modifikasi data, hanya untuk pembacaan dalam fungsi.
 
 # ----------------------------------------------------
-# FUNGSI CBR CORE
+# FUNGSI KLASIFIKASI BUNGA IRIS CORE
 # ----------------------------------------------------
 
 def calculate_similarity(new_case, case_base_row):
@@ -97,7 +97,7 @@ def process_and_normalize_data(df_raw, is_initial_load=False):
 # 2. SIDEBAR (File Upload & Navigasi)
 # ----------------------------------------------------
 
-st.sidebar.title("🛠️ Kontrol Basis Kasus")
+st.sidebar.title("🛠️ Kontrol Basis Kasus Klasifikasi Bunga Iris") # Diubah
 
 # --- File Uploader ---
 uploaded_file = st.sidebar.file_uploader("Upload File CSV Basis Kasus", type=["csv"])
@@ -117,7 +117,7 @@ st.sidebar.markdown("---")
 
 # --- Menu Navigasi ---
 menu_options = [
-    "Sistem CBR (Uji Kemiripan)", 
+    "Sistem Klasifikasi Bunga Iris (Uji Kemiripan)", # Diubah
     "Tabel Basis Kasus", 
     "Tambahkan Kasus Baru (Retain)"
 ]
@@ -146,9 +146,9 @@ if selection == "Tabel Basis Kasus":
     st.dataframe(df_case_base, use_container_width=True)
     st.caption(f"Total Kasus Lama: {len(df_case_base)}")
 
-# --- B. SISTEM CBR (RETRIEVE & REUSE) ---
-elif selection == "Sistem CBR (Uji Kemiripan)":
-    st.header("🎯 Sistem Case-Based Reasoning (CBR)")
+# --- B. SISTEM KLASIFIKASI BUNGA IRIS (RETRIEVE & REUSE) ---
+elif selection == "Sistem Klasifikasi Bunga Iris (Uji Kemiripan)": # Diubah
+    st.header("🎯 Sistem Klasifikasi Bunga Iris") # Diubah
     st.subheader("1. Input Kasus Baru (Query)")
 
     # Gunakan min/max dari data asli untuk slider
@@ -189,7 +189,7 @@ elif selection == "Sistem CBR (Uji Kemiripan)":
     new_case_scaled = new_case_df.copy()
     new_case_scaled[FEATURES] = scaler.transform(new_case_scaled[FEATURES])
 
-    if st.button('PROSES CBR: Cari Solusi', use_container_width=True, type="primary"):
+    if st.button('PROSES KLASIFIKASI BUNGA IRIS: Cari Solusi', use_container_width=True, type="primary"): # Diubah
         
         df_normalized = st.session_state['df_normalized'].copy()
         
@@ -210,10 +210,10 @@ elif selection == "Sistem CBR (Uji Kemiripan)":
 
             
             # Tampilkan Hasil
-            st.success("✅ **Proses CBR Selesai!**")
+            st.success("✅ **Proses Klasifikasi Bunga Iris Selesai!**") # Diubah
             
             st.metric(
-                label=f"SOLUSI YANG DIREKOMENDASIKAN ({TARGET})", 
+                label=f"Data testing yang Anda masukkan masuk pada spesies", # Diubah
                 value=f"**{recommended_solution}**",
                 delta=f"Kemiripan Kasus Terbaik: {best_similarity_score:.4f}"
             )
