@@ -140,8 +140,8 @@ if df_case_base.empty:
 
 
 # --- A. TAMPILKAN TABEL BASIS KASUS ---
-if selection == "Tabel Basis Kasus":
-    st.header("📋 Tabel Basis Kasus (Case Base)")
+if selection == "Tabel Dataset":
+    st.header("📋 Tabel Dataset")
     st.info(f"Fitur (Input): {', '.join(FEATURES)} | Solusi (Target): {TARGET}")
     st.dataframe(df_case_base, use_container_width=True)
     st.caption(f"Total Kasus Lama: {len(df_case_base)}")
@@ -277,5 +277,6 @@ elif selection == "Tambahkan Kasus Baru (Retain)":
             
             st.success(f"Kasus baru berhasil ditambahkan! Total kasus sekarang: {len(df_combined)}")
             st.balloons()
+
 
 
