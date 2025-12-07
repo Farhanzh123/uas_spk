@@ -135,11 +135,11 @@ TARGET = st.session_state['target']
 
 
 if df_case_base.empty:
-    st.info("👋 Silakan upload file CSV Basis Kasus Anda di sidebar kiri untuk memulai.")
+    st.info("👋 Silakan upload file CSV Dataset Kasus Anda di sidebar kiri untuk memulai.")
     st.stop()
 
 
-# --- A. TAMPILKAN TABEL BASIS KASUS ---
+# --- A. TAMPILKAN TABEL Dataset KASUS ---
 if selection == "Tabel Dataset":
     st.header("📋 Tabel Dataset")
     st.info(f"Fitur (Input): {', '.join(FEATURES)} | Solusi (Target): {TARGET}")
@@ -233,7 +233,7 @@ elif selection == "Sistem Klasifikasi Bunga Iris (Uji Kemiripan)": # Diubah
 
 # --- C. TAMBAHKAN KASUS BARU (RETAIN) ---
 elif selection == "Tambahkan Kasus Baru (Retain)":
-    st.header("➕ Tambahkan Kasus Baru ke Basis Data")
+    st.header("➕ Tambahkan Kasus Baru ke Dataset Data")
     st.info("Gunakan menu ini untuk menambahkan kasus yang baru terselesaikan sebagai kasus lama (Retain Phase).")
 
     with st.form("new_case_form"):
@@ -277,6 +277,7 @@ elif selection == "Tambahkan Kasus Baru (Retain)":
             
             st.success(f"Kasus baru berhasil ditambahkan! Total kasus sekarang: {len(df_combined)}")
             st.balloons()
+
 
 
 
