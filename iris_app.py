@@ -90,17 +90,17 @@ def process_and_normalize_data(df_raw, is_initial_load=False):
     st.session_state['df_case_base'] = df
     st.session_state['df_normalized'] = df_normalized
     st.session_state['scaler'] = scaler
-    st.success("Basis Kasus berhasil dimuat dan dinormalisasi! Siap digunakan.")
+    st.success("Dataset Kasus berhasil dimuat dan dinormalisasi! Siap digunakan.")
 
 
 # ----------------------------------------------------
 # 2. SIDEBAR (File Upload & Navigasi)
 # ----------------------------------------------------
 
-st.sidebar.title("🛠️ Kontrol Basis Kasus Klasifikasi Bunga Iris") # Diubah
+st.sidebar.title("🛠️ Kontrol Dataset Kasus Klasifikasi Bunga Iris") # Diubah
 
 # --- File Uploader ---
-uploaded_file = st.sidebar.file_uploader("Upload File harus iris.CSV Basis Kasus", type=["csv"])
+uploaded_file = st.sidebar.file_uploader("Upload File harus iris.CSV Dataset Kasus", type=["csv"])
 
 if uploaded_file is not None:
     # Memuat dan memproses data saat file diupload
@@ -277,6 +277,7 @@ elif selection == "Tambahkan Kasus Baru (Retain)":
             
             st.success(f"Kasus baru berhasil ditambahkan! Total kasus sekarang: {len(df_combined)}")
             st.balloons()
+
 
 
 
