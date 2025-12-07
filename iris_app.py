@@ -100,7 +100,7 @@ def process_and_normalize_data(df_raw, is_initial_load=False):
 st.sidebar.title("🛠️ Kontrol Basis Kasus Klasifikasi Bunga Iris") # Diubah
 
 # --- File Uploader ---
-uploaded_file = st.sidebar.file_uploader("Upload File CSV Basis Kasus", type=["csv"])
+uploaded_file = st.sidebar.file_uploader("Upload File harus iris.CSV Basis Kasus", type=["csv"])
 
 if uploaded_file is not None:
     # Memuat dan memproses data saat file diupload
@@ -277,3 +277,4 @@ elif selection == "Tambahkan Kasus Baru (Retain)":
             
             st.success(f"Kasus baru berhasil ditambahkan! Total kasus sekarang: {len(df_combined)}")
             st.balloons()
+
