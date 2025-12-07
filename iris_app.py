@@ -118,7 +118,7 @@ st.sidebar.markdown("---")
 # --- Menu Navigasi ---
 menu_options = [
     "Sistem Klasifikasi Bunga Iris (Uji Kemiripan)", # Diubah
-    "Tabel Basis Kasus", 
+    "Tabel Dataset", 
     "Tambahkan Kasus Baru (Retain)"
 ]
 selection = st.sidebar.selectbox("Pilih Menu Aplikasi", menu_options)
@@ -277,4 +277,5 @@ elif selection == "Tambahkan Kasus Baru (Retain)":
             
             st.success(f"Kasus baru berhasil ditambahkan! Total kasus sekarang: {len(df_combined)}")
             st.balloons()
+
 
